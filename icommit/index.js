@@ -1,8 +1,8 @@
 const cmd = require('./cmd');
 const file = require('./file');
 // 提交185天前的记录
-let day = 90;   //提交天数
-let startDay = 360;   //距离今天多少天开始
+let day = 80;   //提交天数
+let startDay = 80;   //距离今天多少天开始
 const random = (lower, upper) => {
     return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 }
@@ -14,7 +14,7 @@ const commit = async () => {
     today.setTime(today.getTime() - (startDay * 24 * 60 * 60 * 1000) - (day * 24 * 60 * 60 * 1000));
     let commitTime = `${today.getFullYear()}.${today.getMonth() + 1}.${today.getDate()}`;
     console.log(commitTime);
-    let commitNumber = random(1, 10);   //提交次数
+    let commitNumber = random(1, 5);   //提交次数
     while (commitNumber) {
         await file(commitTime);
         await cmd('git status');
