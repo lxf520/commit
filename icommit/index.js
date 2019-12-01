@@ -2,7 +2,7 @@ const cmd = require('./cmd');
 const file = require('./file');
 // 提交185天前的记录
 let day = 30;   //提交天数
-let startDay = 30;   //距离今天多少天开始
+let startDay = 10;   //距离今天多少天开始
 const random = (lower, upper) => {
     return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 }
